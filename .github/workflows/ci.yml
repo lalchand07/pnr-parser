@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Lint, typecheck, test (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run build
+      - run: npm test
+      - name: Check the packed package
+        run: |
+          npm pack --dry-run
+          node -e "import('pnr-parser').then(m => { if (typeof m.parsePnr !== 'function') process.exit(1) })"
+          node -e "const m = require('pnr-parser'); if (typeof m.parsePnr !== 'function') process.exit(1)"
+          node -e "import('pnr-parser/enrich').then(m => { if (!m.lookupAirport('LHR')) process.exit(1) })"
+      - run: npm run playground:build
