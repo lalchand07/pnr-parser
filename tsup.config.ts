@@ -6,7 +6,7 @@ export default defineConfig([
     format: ['esm', 'cjs'],
     dts: true,
     clean: true,
-    sourcemap: true,
+    sourcemap: false,
     target: 'es2022',
     platform: 'neutral',
     splitting: false,
@@ -18,6 +18,8 @@ export default defineConfig([
     platform: 'node',
     target: 'node20',
     banner: { js: '#!/usr/bin/env node' },
+    // Reuse dist/index.js and dist/enrich/index.js instead of bundling copies.
+    external: ['./index.js', './enrich/index.js'],
     sourcemap: false,
     clean: false,
   },
