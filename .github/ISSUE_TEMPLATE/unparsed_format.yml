@@ -1,0 +1,69 @@
+name: Unparsed format
+description: pnr-parser misread, or could not read, an itinerary display.
+title: '[format] '
+labels: ['format', 'needs-triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! Real-world samples are the best way to improve the parser.
+        **This issue is public.** Before pasting anything, anonymize it using the
+        [checklist in CONTRIBUTING.md](https://github.com/lalchand07/pnr-parser/blob/main/CONTRIBUTING.md#anonymization-checklist).
+  - type: checkboxes
+    id: anonymized
+    attributes:
+      label: Anonymization
+      description: Issues with real personal data will be deleted.
+      options:
+        - label: >-
+            I replaced ALL names, record locators (GDS and airline), phone numbers,
+            e-mail addresses, ticket/EMD numbers, document numbers, payment data,
+            addresses, agency/agent IDs and frequent flyer numbers, and read the
+            sample line by line once more.
+          required: true
+  - type: dropdown
+    id: gds
+    attributes:
+      label: GDS
+      options:
+        - Galileo / Travelport (1G)
+        - Apollo / Travelport (1V)
+        - Worldspan / Travelport (1P)
+        - Sabre
+        - Amadeus
+        - Other / not sure
+    validations:
+      required: true
+  - type: input
+    id: display
+    attributes:
+      label: Display or command
+      description: e.g. `*I`, `*R`, `*IA`, `*A`, `RT`, `RTSVC`, or "copied from the e-mail confirmation".
+    validations:
+      required: true
+  - type: textarea
+    id: sample
+    attributes:
+      label: Anonymized sample
+      description: Keep spacing, symbols and line breaks exactly as displayed.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What pnr-parser returned
+      description: Relevant parts of the JSON, warnings or unparsed lines.
+      render: json
+  - type: textarea
+    id: expected
+    attributes:
+      label: What it should return
+      description: Which segments, passengers or fields are wrong or missing, and what they mean.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: pnr-parser version
+      placeholder: '0.1.0'

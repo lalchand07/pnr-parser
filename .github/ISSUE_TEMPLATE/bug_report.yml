@@ -1,0 +1,35 @@
+name: Bug report
+description: Something other than format support is broken (API, CLI, playground, packaging).
+title: '[bug] '
+labels: ['bug', 'needs-triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For itinerary text that is misread, use the **Unparsed format** template instead.
+        Never include real passenger data.
+  - type: checkboxes
+    id: anonymized
+    attributes:
+      label: Personal data
+      options:
+        - label: This report contains no real names, locators, phone numbers, e-mails, ticket numbers or other personal data.
+          required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Include a minimal code sample or CLI command.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: pnr-parser 0.1.0, Node 22 / Chrome 130, ESM or CJS
