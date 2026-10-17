@@ -39,7 +39,10 @@ const RULES: readonly [RegExp, UnparsedCategory][] = [
     /^(?:AP|APE|APM|APN|APB|APH|APT|APA|FONE|PHONE|PHONES|EMAIL|E-MAIL|CTCE|CTCM|CTCP|ADDR|ADRS|AB|AM)\b|^FONE-|^ADDR-|^P\d*\.|^[A-Z]{3}\s?\d{2,}[\d -]*-?[A-Z]?$/,
     'contact',
   ],
-  [/^(?:RM|RX|RC|RI|RIR|RII|RIF|RQ|NOTE|NOTES|RMK|RMKS|REMARKS?|NP|\*?SI)\b|^NOTE-|^RMKS?-/, 'remark'],
+  [
+    /^(?:RM|RX|RC|RI|RIR|RII|RIF|RQ|NOTE|NOTES|RMK|RMKS|REMARKS?|NP|\*?SI)\b|^NOTE-|^RMKS?-/,
+    'remark',
+  ],
 ];
 
 export function classifyLine(text: string, section: UnparsedCategory | null): UnparsedCategory {

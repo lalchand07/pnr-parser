@@ -28,7 +28,11 @@ export interface SimpleItinerary {
   text: string;
 }
 
-const TYPE_LABEL: Record<Passenger['type'], string> = { ADT: '', CHD: ' (child)', INF: ' (infant)' };
+const TYPE_LABEL: Record<Passenger['type'], string> = {
+  ADT: '',
+  CHD: ' (child)',
+  INF: ' (infant)',
+};
 
 export function passengerDisplayName(p: Passenger): string {
   const parts = [p.title, p.givenName, p.surname].filter((x): x is string => Boolean(x));
@@ -60,7 +64,11 @@ function row(s: Segment): SimpleItineraryRow {
 export function toSimpleItinerary(result: ParseResult): SimpleItinerary {
   const segments = result.segments.map(row);
   const passengers = result.passengers.map(passengerDisplayName);
-  const out: SimpleItinerary = { passengers, segments, text: renderText(result, passengers, segments) };
+  const out: SimpleItinerary = {
+    passengers,
+    segments,
+    text: renderText(result, passengers, segments),
+  };
   if (result.recordLocator) out.recordLocator = result.recordLocator;
   return out;
 }

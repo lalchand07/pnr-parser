@@ -98,7 +98,10 @@ export function isoWeekday(d: CalendarDate): number {
  * Resolves the `referenceDate` option. Returns the calendar date, or null for
  * an unusable value (caller falls back to today and warns).
  */
-export function resolveReferenceDate(ref: Date | string | undefined, now: Date): CalendarDate | null {
+export function resolveReferenceDate(
+  ref: Date | string | undefined,
+  now: Date,
+): CalendarDate | null {
   if (ref === undefined) return localCalendarDate(now);
   if (ref instanceof Date) {
     return Number.isNaN(ref.getTime()) ? null : localCalendarDate(ref);

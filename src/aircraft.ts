@@ -3,6 +3,7 @@
  * a segment line (e.g. `77W`). Only designators unlikely to be confused with
  * other tokens are listed; see docs/FORMAT_NOTES.md (A9).
  */
+// prettier-ignore
 export const AIRCRAFT_TYPES: ReadonlySet<string> = new Set([
   // Airbus
   '318', '319', '320', '321', '32A', '32B', '32N', '32Q', '31N', '32S', '221', '223',

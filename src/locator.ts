@@ -9,7 +9,8 @@ const AMADEUS_HEADER = /^\s*RP\/[A-Z0-9]+(?:\/[A-Z0-9]+)?\b.*\s([A-Z0-9]{6})\s*$
 // Galileo/Travelport: `QXZ7KD/WS LHRGB AG 99999992 15OCT`
 const GALILEO_HEADER = /^\s*([A-Z0-9]{6})\/[A-Z0-9]{2,3}(?:\s|$)/;
 // Sabre received / creation line: `A1B2.A1B2*AWS 1234/15OCT26 ABCDEF H`
-const SABRE_HEADER = /^\s*[A-Z0-9]{4}\.[A-Z0-9]{4}\*A[A-Z0-9]{2}\s+\d{3,4}\/\d{1,2}[A-Z]{3}\d{2}\s+([A-Z]{6})\b/;
+const SABRE_HEADER =
+  /^\s*[A-Z0-9]{4}\.[A-Z0-9]{4}\*A[A-Z0-9]{2}\s+\d{3,4}\/\d{1,2}[A-Z]{3}\d{2}\s+([A-Z]{6})\b/;
 const LABELLED =
   /\b(?:RECORD\s+LOCATOR|REC\s*LOC|RLOC|PNR(?:\s+(?:LOCATOR|REF(?:ERENCE)?|NO))?|BOOKING\s+(?:REF(?:ERENCE)?|CODE)|CONFIRMATION\s+(?:NO|NUMBER|CODE))\s*[:#.=-]?\s*([A-Z0-9]{6})\b/;
 const BARE = /^\s*([A-Z0-9]{6})\s*$/;

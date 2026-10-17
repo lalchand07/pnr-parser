@@ -24,12 +24,7 @@ export interface ParseOptions {
 }
 
 export type SegmentStatusCategory =
-  | 'confirmed'
-  | 'waitlisted'
-  | 'requested'
-  | 'cancelled'
-  | 'unconfirmed'
-  | 'unknown';
+  'confirmed' | 'waitlisted' | 'requested' | 'cancelled' | 'unconfirmed' | 'unknown';
 
 export interface OperatingCarrier {
   /** Two-character IATA code, when the display printed one. */

@@ -74,16 +74,16 @@ Parsing therefore happens in two stages:
 Per-format **profiles** describe what each GDS normally prints, and are used
 both for detection scoring and for validation warnings:
 
-| | Galileo/Travelport `*I`/`*R` | Sabre `*I`/`*IA` | Amadeus `RT` |
-|---|---|---|---|
-| Segment number | ` 1. ` (dot) | ` 1 ` | ` 3 ` (shared element numbering) |
-| Flight/class | `BA  117 Y` | `BA 117Y` | `BA 117 Y` |
-| Day of week | trailing `MO`…`SU` (not validated) | letter after date `M T W Q F J S` | digit after date `1`–`7` (Mon=1) |
-| Times | 24h `1020` | 12h `1020A`/`700P`/`1200N`, 24h accepted | 24h `1020` |
-| Day offset | `#` (= +1) or `+n` | `¥1`, `‡1`, `+1` | `+1`, plus arrival date `16DEC` |
-| Names | `1.1SMITH/JOHN MR`, `2.2DOE/JANE MRS/JIM MSTR`, `I/1…` | same as Galileo, `*C08`, `*INF` | `1.SMITH/JOHN MR(CHD/05JAN18)` `(INFBABY/01JAN25)` |
-| Record locator | first-line header `ABC123/XX …` | `….*AXX 1234/15OCT26 ABCDEF` | `RP/…/… … ABC123` |
-| Other elements | `FONE-`, `TKTG-`, `NOTE-`, `GFAX-` | `PHONES`, `TKT/TIME LIMIT`, `REMARKS`, `GENERAL FACTS` sections | numbered `AP`, `TK`, `SSR`, `OSI`, `RM`, `FE`, `FP` |
+|                | Galileo/Travelport `*I`/`*R`                           | Sabre `*I`/`*IA`                                                | Amadeus `RT`                                        |
+| -------------- | ------------------------------------------------------ | --------------------------------------------------------------- | --------------------------------------------------- |
+| Segment number | `1.` (dot)                                             | `1`                                                             | `3` (shared element numbering)                      |
+| Flight/class   | `BA  117 Y`                                            | `BA 117Y`                                                       | `BA 117 Y`                                          |
+| Day of week    | trailing `MO`…`SU` (not validated)                     | letter after date `M T W Q F J S`                               | digit after date `1`–`7` (Mon=1)                    |
+| Times          | 24h `1020`                                             | 12h `1020A`/`700P`/`1200N`, 24h accepted                        | 24h `1020`                                          |
+| Day offset     | `#` (= +1) or `+n`                                     | `¥1`, `‡1`, `+1`                                                | `+1`, plus arrival date `16DEC`                     |
+| Names          | `1.1SMITH/JOHN MR`, `2.2DOE/JANE MRS/JIM MSTR`, `I/1…` | same as Galileo, `*C08`, `*INF`                                 | `1.SMITH/JOHN MR(CHD/05JAN18)` `(INFBABY/01JAN25)`  |
+| Record locator | first-line header `ABC123/XX …`                        | `….*AXX 1234/15OCT26 ABCDEF`                                    | `RP/…/… … ABC123`                                   |
+| Other elements | `FONE-`, `TKTG-`, `NOTE-`, `GFAX-`                     | `PHONES`, `TKT/TIME LIMIT`, `REMARKS`, `GENERAL FACTS` sections | numbered `AP`, `TK`, `SSR`, `OSI`, `RM`, `FE`, `FP` |
 
 When the selected format's expectations are not met (e.g. 12h times in an
 Amadeus display) the segment is still parsed and a `FORMAT_MISMATCH` warning
@@ -116,13 +116,13 @@ day-of-week mismatch (Sabre/Amadeus print DOW).
 ```ts
 interface ParseResult {
   format: 'galileo' | 'sabre' | 'amadeus' | 'unknown';
-  confidence: number;            // 0..1
+  confidence: number; // 0..1
   formatForced: boolean;
-  referenceDate: string;         // YYYY-MM-DD actually used
+  referenceDate: string; // YYYY-MM-DD actually used
   recordLocator?: string;
   passengers: Passenger[];
   segments: Segment[];
-  warnings: ParseWarning[];      // { code, message, line? }
+  warnings: ParseWarning[]; // { code, message, line? }
   unparsedLines: UnparsedLine[]; // { line, text, category }
 }
 ```

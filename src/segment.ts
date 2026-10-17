@@ -46,11 +46,7 @@ export interface SegmentTraits {
   flightClassJoined: boolean;
 }
 
-export type SegmentIssueField =
-  | 'status'
-  | 'departure time'
-  | 'arrival time'
-  | 'arrival date';
+export type SegmentIssueField = 'status' | 'departure time' | 'arrival time' | 'arrival date';
 
 export interface SegmentIssue {
   kind: 'missing' | 'invalid';

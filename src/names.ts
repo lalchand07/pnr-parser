@@ -138,7 +138,6 @@ function readElementItem(
       readAge(p, code);
       if (dob) setDob(p, dob, ref);
     } else if (/^(ADT|YTH|SRC|STU|MIL|YCD)$/.test(g)) {
-      p.typeCode = g;
       setType(p, 'ADT', 'explicit', g);
     }
     // Other bracketed data (customer IDs, etc.) stays in `raw`.
@@ -187,11 +186,7 @@ function readAmadeusInfant(
   return inf;
 }
 
-function buildPassenger(
-  surname: string,
-  givenRaw: string,
-  raw: string,
-): PassengerDraft | null {
+function buildPassenger(surname: string, givenRaw: string, raw: string): PassengerDraft | null {
   const words = givenRaw.trim().split(/\s+/).filter(Boolean);
   let title: Title | undefined;
   let marker: 'CHD' | 'INF' | undefined;

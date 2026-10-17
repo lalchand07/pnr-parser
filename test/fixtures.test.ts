@@ -632,7 +632,9 @@ describe('fixture set', () => {
   it('has at least 40 fixtures spread across the three formats', () => {
     expect(fixtures.length).toBeGreaterThanOrEqual(40);
     for (const dir of ['galileo', 'sabre', 'amadeus']) {
-      expect(fixtures.filter((f) => f.name.startsWith(`${dir}/`)).length).toBeGreaterThanOrEqual(10);
+      expect(fixtures.filter((f) => f.name.startsWith(`${dir}/`)).length).toBeGreaterThanOrEqual(
+        10,
+      );
     }
   });
 

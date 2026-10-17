@@ -159,7 +159,11 @@ function run(
       format = requested;
       confidence = confidenceFor(requested, detection.scores);
       result.formatForced = true;
-      if (detection.format !== requested && detection.format !== 'unknown' && detection.confidence >= 0.5) {
+      if (
+        detection.format !== requested &&
+        detection.format !== 'unknown' &&
+        detection.confidence >= 0.5
+      ) {
         sink.add(
           'FORMAT_MISMATCH',
           `Format was forced to ${PROFILES[requested].label}, but the text looks like ${PROFILES[detection.format].label} (confidence ${detection.confidence}).`,
@@ -316,7 +320,11 @@ function readSegment(
     if (next && next.text.trim() !== '' && looksLikeSegmentStart(line.text)) {
       const joined = parseSegmentLine(`${line.text} ${next.text.trim()}`);
       if (joined && !joined.issues.some((x) => x.field === 'status')) {
-        sink.add('WRAPPED_LINE_JOINED', `joined with line ${next.number} to read a wrapped segment.`, line.number);
+        sink.add(
+          'WRAPPED_LINE_JOINED',
+          `joined with line ${next.number} to read a wrapped segment.`,
+          line.number,
+        );
         return { draft: { parsed: joined, lines: [line, next] }, consumed: 2 };
       }
     }
@@ -332,7 +340,11 @@ function readSegment(
   ) {
     const joined = parseSegmentLine(`${line.text} ${next.text.trim()}`);
     if (joined && joined.issues.length < parsed.issues.length) {
-      sink.add('WRAPPED_LINE_JOINED', `joined with line ${next.number} to read a wrapped segment.`, line.number);
+      sink.add(
+        'WRAPPED_LINE_JOINED',
+        `joined with line ${next.number} to read a wrapped segment.`,
+        line.number,
+      );
       return { draft: { parsed: joined, lines: [line, next] }, consumed: 2 };
     }
   }
@@ -452,7 +464,8 @@ function buildSegment(
   if (arrival) segment.arrivalDate = toIso(arrival);
   if (p.seats !== undefined) segment.seats = p.seats;
   const operating =
-    draft.operating ?? (p.operatingCarrierText ? readOperatingCarrier(p.operatingCarrierText) : undefined);
+    draft.operating ??
+    (p.operatingCarrierText ? readOperatingCarrier(p.operatingCarrierText) : undefined);
   if (operating) segment.operatingCarrier = operating;
   if (p.equipment !== undefined) segment.equipment = p.equipment;
   if (p.airlineLocator !== undefined) segment.airlineLocator = p.airlineLocator;

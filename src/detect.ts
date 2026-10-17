@@ -14,7 +14,8 @@ type Scores = Record<GdsFormat, number>;
 const FULL_STRENGTH = 8;
 const DUMMY_REF = { year: 2000, month: 1, day: 1 };
 
-const AMADEUS_ELEMENT = /^\s*\d{1,3}\s+(?:AP|APE|APM|APN|TK|SSR|OSI|RM|RX|RC|RIR|FA|FB|FE|FP|FV|FM|OPW|OPC)\b/;
+const AMADEUS_ELEMENT =
+  /^\s*\d{1,3}\s+(?:AP|APE|APM|APN|TK|SSR|OSI|RM|RX|RC|RIR|FA|FB|FE|FP|FV|FM|OPW|OPC)\b/;
 const AMADEUS_MARKER = /^\s*-{2,}\s*(?:RLR|TST|SFP|ETR|SFT)\b/;
 const GALILEO_ELEMENT = /^\s*(?:FONE|TKTG|ADDR|NOTE|GFAX|RMKS|ATFQ|FQ|DLVR|FOP|ADRS|ACT|RCVD)-/;
 const GALILEO_BANNER = /^\s*\*\*\s.*\s\*\*\s*$/;
