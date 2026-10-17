@@ -48,6 +48,7 @@ export function classifyLine(text: string, section: UnparsedCategory | null): Un
   for (const [re, category] of RULES) {
     if (re.test(stripped) || re.test(t)) return category;
   }
-  if (section) return section;
+  // Inside a Sabre section, numbered entries (`  1.…`) belong to it.
+  if (section && /^\d{1,3}\./.test(t)) return section;
   return 'unknown';
 }

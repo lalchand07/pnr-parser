@@ -81,7 +81,15 @@ const CORE = new RegExp(
 const SEGMENT_START = /^\s*\d{1,3}\.?\s*(?:[A-Z][A-Z0-9]|[0-9][A-Z])\s*\d{1,4}\s*[A-Z](?:\s|\d|$)/;
 
 /** A line that looks like the rest of a wrapped segment line. */
-const TAIL_CONTINUATION = /^\s*(?:[A-Z]{2}\s?\d{1,3}\s+)?\d{1,4}[APNM]?\s+\d{1,4}[APNM]?(?:\s|$|[#+¥‡-])/;
+const TAIL_CONTINUATION =
+  /^\s*(?:[A-Z]{2}\s?\d{1,3}\s+)?(?:\d{3,4}[APNM]?|\d{1,2}[APNM])(?:\s|$|[#+¥‡-])/;
+
+/** A line holding only Sabre slash qualifiers, e.g. `/DCBA*ABC123 /E`. */
+const EXTRAS_CONTINUATION = /^\s*\/DC[A-Z0-9]{2}\S*(?:\s+\/\S+)*\s*$/;
+
+export function looksLikeExtrasContinuation(text: string): boolean {
+  return EXTRAS_CONTINUATION.test(text);
+}
 
 export function looksLikeSegmentStart(text: string): boolean {
   return SEGMENT_START.test(text);
@@ -209,7 +217,7 @@ const DC_LOCATOR = /^\/DC([A-Z0-9]{2})(?:\*([A-Z0-9]{5,8}))?$/;
 const SLASH_LOCATOR = /^([A-Z][A-Z0-9]|[0-9][A-Z])\/([A-Z0-9]{5,8})$/;
 const EQUIPMENT_PREFIX = /^(?:EQP|EQ|EQUIP)[:/]?([A-Z0-9]{3,4})?$/;
 
-function readExtras(rest: string, seg: SegmentLine): void {
+export function readExtras(rest: string, seg: SegmentLine): void {
   const operated = /\bOPERATED\s+BY\s+(.+)$/.exec(rest);
   if (operated) {
     seg.operatingCarrierText = operated[1]!.trim();

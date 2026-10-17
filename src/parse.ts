@@ -17,7 +17,13 @@ import { parseNameLine } from './names.js';
 import type { InputLine } from './normalize.js';
 import { splitLines } from './normalize.js';
 import type { SegmentLine } from './segment.js';
-import { looksLikeSegmentStart, looksLikeTailContinuation, parseSegmentLine } from './segment.js';
+import {
+  looksLikeExtrasContinuation,
+  looksLikeSegmentStart,
+  looksLikeTailContinuation,
+  parseSegmentLine,
+  readExtras,
+} from './segment.js';
 import { describeStatus, isKnownStatus } from './status.js';
 import type {
   DetectedFormat,
@@ -204,6 +210,18 @@ function run(
       } else {
         markUnparsed(line, 'unknown');
       }
+      continue;
+    }
+
+    // Sabre qualifiers (`/DCBA*ABC123 /E`) wrapped onto their own line.
+    if (lastSegment && looksLikeExtrasContinuation(text)) {
+      readExtras(text, lastSegment.parsed);
+      lastSegment.lines.push(line);
+      sink.add(
+        'WRAPPED_LINE_JOINED',
+        `joined with line ${line.number} to read a wrapped segment.`,
+        lastSegment.lines[0]!.number,
+      );
       continue;
     }
 
