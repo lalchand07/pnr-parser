@@ -277,7 +277,7 @@ npm run build
 
 ## Built by
 
-_Your name / agency here._ <!-- TODO: add maintainer name and link -->
+__Lal Chand / Codic Systems._ ([website](https://codicsystems.com) · [GitHub](https://github.com/lalchand07))
 
 ## License
 
