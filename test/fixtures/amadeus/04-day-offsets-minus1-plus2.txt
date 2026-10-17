@@ -1,0 +1,8 @@
+# Day offsets other than +1: -1 when crossing the date line eastbound and
+# +2 on a one-stop flight number.
+# ASSUMPTION A12
+---
+RP/SYDXX03EF/SYDXX03EF            AA/SU  09OCT26/2210Z   B6NQRS
+  1.ROE/RICHARD MR
+  2  HA 452 Y 16DEC 3 SYDHNL HK1  0100 1400-1 15DEC  E  HA/MZ8QWE
+  3  SQ  26 J 19DEC 6 JFKSIN HK1  2140 0740+2 21DEC  E  SQ/N3VBXC

@@ -1,0 +1,8 @@
+# One-way *R display: agency header line, one name, FONE and TKTG fields.
+# ASSUMPTION A1 A3 A18
+---
+ZQGAL1/WS LHRGB AG 99999992 12OCT
+  1.1SAMPLE/JOHN MR
+ 1. BA  117 Y  15DEC LHRJFK HK1  1020   1315  O*        TU  E
+FONE-LONT*020 7946 0000
+TKTG-TAU/12OCT

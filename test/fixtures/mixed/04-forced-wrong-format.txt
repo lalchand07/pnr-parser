@@ -1,0 +1,6 @@
+# format: sabre
+# Amadeus text with the format forced to Sabre: still parsed, with warnings.
+---
+RP/LONXX21AB/LONXX21AB            AA/SU  12OCT26/0915Z   ZQ7TKD
+  1.SAMPLE/JOHN MR
+  2  BA 117 Y 15DEC 2 LHRJFK HK1  1020 1315   15DEC  E  BA/YT4KQ9

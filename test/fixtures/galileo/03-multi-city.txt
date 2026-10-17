@@ -1,0 +1,9 @@
+# Four-segment multi-city with three overnight arrivals.
+# ASSUMPTION A2
+---
+K2GALM/WS LHRGB AG 99999992 01OCT
+  1.1EXAMPLE/SOPHIE MS
+ 1. TG  917 Y  05NOV LHRBKK HK1  2130   1520 # O*        TH  E
+ 2. TG  475 Y  08NOV BKKSYD HK1  1805   0705 # O*        SU  E
+ 3. QF   35 Y  20NOV SYDSIN HK1  1520   2105   O*        FR  E
+ 4. SQ  322 Y  22NOV SINLHR HK1  2335   0615 # O*        SU  E

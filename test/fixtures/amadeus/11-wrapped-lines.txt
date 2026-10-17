@@ -1,0 +1,9 @@
+# Long segment lines wrapped by an e-mail client; the parser re-joins them.
+# ASSUMPTION A23
+---
+RP/LONXX21AB/LONXX21AB            AA/SU  15OCT26/1100Z   J9WRAP
+  1.EXAMPLE/LIAM MR
+  2  VS   3 Y 03DEC 4 LHRJFK
+     HK1  0830 1140   03DEC  E  VS/ABQ2RT
+  3  VS   4 Y 10DEC 4 JFKLHR HK1  1830
+     0630+1 11DEC  E  VS/ABQ2RT

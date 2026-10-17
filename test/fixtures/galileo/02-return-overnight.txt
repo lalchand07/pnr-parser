@@ -1,0 +1,6 @@
+# ASSUMPTION A2: `#` after the arrival time marks a next-day arrival.
+---
+R8GALX/AB MANGB AG 99999993 14OCT
+  1.1DOE/JAMES MR  2.1DOE/MARY MRS
+ 1. EK   18 Y  20NOV MANDXB HK2  1415   0030 # O*        FR  E
+ 2. EK   17 Y  04DEC DXBMAN HK2  0745   1150   O*        FR  E

@@ -1,0 +1,6 @@
+# Lowercase input with tabs and irregular spacing.
+---
+m4galz/ws  lhrgb   ag 99999992   15oct
+   1.1dummy/sarah ms     2.1dummy/tom mr
+  1.	ba   287 y   09nov   lhrsfo   hk2    1135    1450     o*     mo   e
+  2.   ba   286 y   16nov   sfolhr   hk2    2010    1425 #   o*     mo   e

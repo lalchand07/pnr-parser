@@ -1,0 +1,5 @@
+# ASSUMPTION A2: a +2 arrival is shown here as `#2`; this is unverified.
+---
+B6GALD/WS NYCUS AG 99999996 09OCT
+  1.1ROE/RICHARD MR
+ 1. SQ   26 J  19DEC JFKSIN HK1  2140   0740#2 O*        SA  E

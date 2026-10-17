@@ -1,0 +1,9 @@
+# Two passengers in one name item (1.2), Umrah via Istanbul.
+# ASSUMPTION A21
+---
+H8GALT/WS LHRGB AG 99999992 02OCT
+  1.2NOBODY/ALEX MR/SAMIRA MRS
+ 1. TK 1986 Y  03NOV LHRIST HK2  1340   1945   O*        TU  E
+ 2. TK   96 Y  04NOV ISTJED HK2  0155   0540   O*        WE  E
+ 3. TK   95 Y  18NOV JEDIST HK2  0700   1050   O*        WE  E
+ 4. TK 1983 Y  18NOV ISTLHR HK2  1540   1750   O*        WE  E

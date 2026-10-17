@@ -1,0 +1,10 @@
+# Mixed statuses: HL waitlist, UC unable, XX cancelled, NO no action.
+# ASSUMPTION A22
+---
+W5GALW/WS DXBAE AG 99999995 13OCT
+  1.1FICTIVE/OMAR MR
+ 1. EK  600 Y  18DEC DXBKHI HL1  2155   0145 # O*        FR  E
+ 2. EK  602 Y  18DEC DXBKHI HK1  1015   1410   O*        FR  E
+ 3. EK  609 Y  02JAN KHIDXB UC1  0415   0540   O*        SA  E
+ 4. EK  607 Y  02JAN KHIDXB XX1  1015   1140   O*        SA  E
+ 5. EK  601 Y  03JAN KHIDXB NO1  2130   2255   O*        SU  E

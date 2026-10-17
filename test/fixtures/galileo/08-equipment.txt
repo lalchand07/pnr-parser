@@ -1,0 +1,8 @@
+# ASSUMPTION A9: equipment codes are only recognised from a curated list,
+# either as a bare token or with an EQP: prefix.
+---
+E9GALQ/WS LHRGB AG 99999992 15OCT
+  1.1ROE/RICHARD MR
+ 1. EK    2 Y  05NOV LHRDXB HK1  1440   0040 # O*  77W   TH  E
+ 2. EK  412 Y  06NOV DXBSYD HK1  0215   2215   O*  388   FR  E
+ 3. QF    1 Y  20NOV SYDLHR HK1  1545   0505 # O*  EQP:789 FR  E

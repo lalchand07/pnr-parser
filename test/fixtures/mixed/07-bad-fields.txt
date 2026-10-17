@@ -1,0 +1,5 @@
+# Invalid time, unknown status code and a segment with no status or times.
+---
+ 1. BA  117 Y  15DEC LHRJFK HK1  2575   1315   O*        TU  E
+ 2. BA  112 Y  22DEC JFKLHR ZZ1  1900   0655 # O*        TU  E
+ 3. BA  113 Y  23DEC JFKLHR

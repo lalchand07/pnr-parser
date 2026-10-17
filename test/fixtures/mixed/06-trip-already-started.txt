@@ -1,0 +1,8 @@
+# referenceDate: 2026-11-10
+# The trip started before the reference date: 05NOV is pushed to 2027,
+# which triggers day-of-week and chronology warnings.
+---
+RP/LONXX21AB/LONXX21AB            AA/SU  01OCT26/1402Z   K2LATE
+  1.EXAMPLE/SOPHIE MS
+  2  EK   2 Y 05NOV 4 LHRDXB HK1  1440 0040+1 06NOV  E
+  3  EK   1 Y 20NOV 5 DXBLHR HK1  0800 1225   20NOV  E

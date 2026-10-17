@@ -1,0 +1,4 @@
+# Segment lines copied without their numbers (e.g. from an e-mail body).
+---
+BA 117 Y 15DEC 2 LHRJFK HK1 1020 1315 15DEC
+BA 112 Y 22DEC 2 JFKLHR HK1 1900 0655+1 23DEC

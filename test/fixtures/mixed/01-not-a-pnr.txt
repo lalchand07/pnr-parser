@@ -1,0 +1,6 @@
+# Plain e-mail text: nothing to parse, format unknown, all lines kept.
+---
+Hello team, please see the booking below.
+Thanks!
+--
+Sent from my phone

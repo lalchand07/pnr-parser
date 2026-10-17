@@ -1,0 +1,10 @@
+# referenceDate: 2026-12-20
+# Year wrap: December dates stay in 2026, January dates move to 2027.
+# An ARNK (arrival unknown) element sits between two segments.
+---
+RP/LONXX21AB/LONXX21AB            AA/SU  18DEC26/1100Z   Y2WRAP
+  1.DOE/JANE MS
+  2  AF1381 Y 28DEC 1 LHRCDG HK1  0715 0935   28DEC  E  AF/PO9IUY
+  3 ARNK
+  4  AF1680 Y 03JAN 7 ORYNCE HK1  1000 1125   03JAN  E  AF/PO9IUY
+  5  BA 343 Y 05JAN 2 NCELHR HK1  1240 1355   05JAN  E  BA/WS2EDC
