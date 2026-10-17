@@ -56,6 +56,13 @@
     },
     "./package.json": "./package.json"
   },
+  "typesVersions": {
+    "*": {
+      "enrich": [
+        "./dist/enrich/index.d.ts"
+      ]
+    }
+  },
   "bin": {
     "pnr-parser": "./dist/cli.js"
   },

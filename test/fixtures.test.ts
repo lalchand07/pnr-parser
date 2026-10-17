@@ -379,6 +379,16 @@ const EXPECTED: Record<string, Expectation> = {
     unparsed: [],
   },
 
+  'sabre/16-ia-arrival-date-arnk.txt': {
+    format: 'sabre',
+    pax: ['1.1 SAMPLE/JOHN MR ADT'],
+    segs: [
+      '1 BA117 Y 2026-12-15 LHRJFK 10:20-13:15+0 HK1 rl=YT4KQ9',
+      '3 BA112 Y 2026-12-22 JFKLHR 19:00-06:55+1 HK1 rl=YT4KQ9',
+    ],
+    unparsed: ['1:header', '4:arnk'],
+  },
+
   // ---------------------------------------------------------------- Galileo
   'galileo/01-oneway-single.txt': {
     format: 'galileo',

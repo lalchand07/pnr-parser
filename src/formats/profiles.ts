@@ -19,9 +19,8 @@ export const PROFILES: Readonly<Record<GdsFormat, FormatProfile>> = {
   sabre: {
     label: 'Sabre',
     mismatch(seg) {
+      // Arrival dates are not checked: some Sabre displays (*IA) may print them.
       if (seg.dowStyle === 'digit') return 'a numeric day-of-week (Amadeus style)';
-      if (seg.traits.arrivalDatePrinted)
-        return 'an arrival date after the arrival time (Amadeus style)';
       return null;
     },
   },
