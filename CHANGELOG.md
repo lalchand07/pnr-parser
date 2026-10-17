@@ -29,7 +29,7 @@ All notable changes to this project are documented here. The format follows
   `--enrich`, `--compact`.
 - Browser playground (Vite, no backend, CSP without network access) and a
   GitHub Pages deployment workflow.
-- 53 synthetic fixtures, unit tests and property-based tests.
+- 54 synthetic fixtures, unit tests and property-based tests.
 
 [Unreleased]: https://github.com/lalchand07/pnr-parser/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/lalchand07/pnr-parser/releases/tag/v0.1.0
