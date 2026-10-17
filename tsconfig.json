@@ -19,5 +19,5 @@
     "forceConsistentCasingInFileNames": true,
     "types": ["node"]
   },
-  "include": ["src", "test", "playground", "scripts", "*.config.ts"]
+  "include": ["src", "test", "*.config.ts"]
 }
