@@ -1,0 +1,10 @@
+{
+  "//": "Type-checks the browser core without Node typings, proving it uses no Node-only APIs.",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ES2022"],
+    "types": []
+  },
+  "include": ["src"],
+  "exclude": ["src/cli.ts"]
+}

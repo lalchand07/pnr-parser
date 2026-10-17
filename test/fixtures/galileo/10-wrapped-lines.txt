@@ -1,0 +1,9 @@
+# Segment lines wrapped mid-way; both are re-joined with a warning.
+# ASSUMPTION A23
+---
+J9GALW/WS LHRGB AG 99999992 15OCT
+  1.1EXAMPLE/LIAM MR
+ 1. VS    3 Y  03DEC LHRJFK HK1  0830
+      1140   O*        TH  E
+ 2. VS    4 Y
+      10DEC JFKLHR HK1  1830   0630 # O*        TH  E

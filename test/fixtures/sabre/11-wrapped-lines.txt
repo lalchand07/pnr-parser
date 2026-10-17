@@ -1,0 +1,9 @@
+# Wrapped lines: qualifiers on their own line, and a segment broken after the
+# city pair.
+# ASSUMPTION A23
+---
+ 1.1DOE/JANE MS
+ 1 VS   3Y 03DEC Q LHRJFK HK1   830A 1140A
+     /DCVS*ABQ2RT /E
+ 2 VS   4Y 10DEC Q JFKLHR
+     HK1   630P  630A¥1 /DCVS*ABQ2RT /E

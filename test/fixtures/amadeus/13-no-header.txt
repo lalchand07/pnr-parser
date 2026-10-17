@@ -1,0 +1,5 @@
+# Partial paste: names and segments only, no RP header, so no record locator.
+---
+  1.SAMPLE/NADIA MS
+  2  PK 785 Y 05DEC 6 ISBLHR HK1  0900 1330   05DEC  E  PK/T6YHNM
+  3  PK 786 Y 12DEC 6 LHRISB HK1  1530 0610+1 13DEC  E  PK/T6YHNM

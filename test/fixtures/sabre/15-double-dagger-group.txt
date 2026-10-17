@@ -1,0 +1,6 @@
+# Three passengers in one name item (1.3) and a double-dagger day change.
+# ASSUMPTION A8 A21
+---
+ 1.3DUMMY/AHMED MR/BILAL MR/CHAND MR
+ 1 EY  20Y 15JAN F MANAUH HK3   920P  825A‡1 /DCEY*QP0OIU /E
+ 2 EY 333Y 16JAN J AUHJED HK3   940A 1155A /DCEY*QP0OIU /E

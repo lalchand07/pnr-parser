@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <title>pnr-parser playground</title>
+    <meta
+      name="description"
+      content="Paste Galileo, Sabre or Amadeus itinerary text and get structured JSON. Runs entirely in your browser."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M1 9l14-6-5 12-2-5z' fill='%232563eb'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <h1>pnr-parser</h1>
+        <p class="tagline">GDS itinerary text → clean JSON</p>
+      </div>
+      <p class="privacy" role="note">
+        <strong>Your data never leaves your browser.</strong> Parsing runs locally; this page makes
+        no network requests.
+      </p>
+    </header>
+
+    <main class="layout">
+      <section class="pane input-pane" aria-labelledby="input-heading">
+        <div class="pane-head">
+          <h2 id="input-heading">Paste itinerary text</h2>
+          <label class="inline">
+            <span class="sr-only">Load a synthetic sample</span>
+            <select id="sample">
+              <option value="">Load a synthetic sample…</option>
+            </select>
+          </label>
+        </div>
+        <textarea
+          id="input"
+          spellcheck="false"
+          autocomplete="off"
+          aria-label="GDS itinerary text"
+          placeholder="Paste a Galileo (*I / *R), Sabre (*I / *IA) or Amadeus (RT) display here…"
+        ></textarea>
+        <div class="options">
+          <label>
+            Format
+            <select id="format">
+              <option value="auto">Auto-detect</option>
+              <option value="galileo">Galileo / Travelport</option>
+              <option value="sabre">Sabre</option>
+              <option value="amadeus">Amadeus</option>
+            </select>
+          </label>
+          <label>
+            Reference date
+            <input type="date" id="reference-date" />
+          </label>
+          <label class="check">
+            <input type="checkbox" id="enrich" />
+            Airport names
+          </label>
+          <button type="button" id="clear" class="ghost">Clear</button>
+        </div>
+        <p class="hint">
+          GDS dates have no year. Each date becomes its next occurrence on or after the reference
+          date.
+        </p>
+      </section>
+
+      <section class="pane output-pane" aria-labelledby="output-heading">
+        <div class="pane-head">
+          <h2 id="output-heading">Result</h2>
+          <div class="badges" id="badges" aria-live="polite"></div>
+        </div>
+
+        <div id="warnings" class="warnings" aria-live="polite"></div>
+
+        <div class="tabs" role="tablist">
+          <button role="tab" type="button" data-tab="itinerary" aria-selected="true">
+            Itinerary
+          </button>
+          <button role="tab" type="button" data-tab="json" aria-selected="false">JSON</button>
+          <button role="tab" type="button" data-tab="csv" aria-selected="false">CSV</button>
+          <button role="tab" type="button" data-tab="unparsed" aria-selected="false">
+            Unparsed lines <span id="unparsed-count" class="count"></span>
+          </button>
+        </div>
+
+        <div class="tab-panel" data-panel="itinerary" role="tabpanel">
+          <div id="passengers"></div>
+          <div class="table-wrap"><table id="itinerary"></table></div>
+        </div>
+        <div class="tab-panel" data-panel="json" role="tabpanel" hidden>
+          <div class="panel-actions">
+            <button type="button" data-copy="json">Copy JSON</button>
+            <button type="button" data-download="json">Download</button>
+          </div>
+          <pre id="json" class="code"></pre>
+        </div>
+        <div class="tab-panel" data-panel="csv" role="tabpanel" hidden>
+          <div class="panel-actions">
+            <button type="button" data-copy="csv">Copy CSV</button>
+            <button type="button" data-download="csv">Download</button>
+          </div>
+          <pre id="csv" class="code"></pre>
+        </div>
+        <div class="tab-panel" data-panel="unparsed" role="tabpanel" hidden>
+          <p class="hint">
+            Lines that are not air segments or passenger names are kept here, never dropped.
+          </p>
+          <div class="table-wrap"><table id="unparsed"></table></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <p>
+        Open source (MIT). Samples are synthetic, with invented names and record locators.
+        <a href="https://github.com/lalchand07/pnr-parser" rel="noopener noreferrer">GitHub</a>
+        · <a href="https://www.npmjs.com/package/pnr-parser" rel="noopener noreferrer">npm</a>
+      </p>
+    </footer>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

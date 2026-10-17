@@ -1,0 +1,5 @@
+# A plain *I itinerary preceded by a hand-typed "RECORD LOCATOR:" label.
+---
+RECORD LOCATOR: N3GALR
+ 1. PK  785 Y  05DEC ISBLHR HK1  0900   1330   O*        SA  E
+ 2. PK  786 Y  12DEC LHRISB HK1  1530   0610 # O*        SA  E

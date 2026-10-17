@@ -1,0 +1,9 @@
+# *IA style display with a printed arrival date, a command echo and an ARNK.
+# Sabre may print arrival dates on *IA; this must not raise FORMAT_MISMATCH.
+# ASSUMPTION A6 A7
+---
+>*IA
+ 1.1SAMPLE/JOHN MR
+ 1 BA 117Y 15DEC T LHRJFK HK1  1020A  115P 15DEC T /DCBA*YT4KQ9 /E
+ 2 ARNK
+ 3 BA 112Y 22DEC T JFKLHR HK1   700P  655A¥1 /DCBA*YT4KQ9 /E
