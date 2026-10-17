@@ -1,0 +1,95 @@
+{
+  "name": "pnr-parser",
+  "version": "0.1.0",
+  "description": "Parse raw GDS itinerary text (Galileo/Travelport, Sabre, Amadeus) into clean, typed JSON with honest warnings.",
+  "keywords": [
+    "pnr",
+    "gds",
+    "itinerary",
+    "parser",
+    "amadeus",
+    "sabre",
+    "galileo",
+    "travelport",
+    "travel",
+    "airline",
+    "booking"
+  ],
+  "license": "MIT",
+  "author": "pnr-parser contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lalchand07/pnr-parser.git"
+  },
+  "homepage": "https://github.com/lalchand07/pnr-parser#readme",
+  "bugs": {
+    "url": "https://github.com/lalchand07/pnr-parser/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./enrich": {
+      "import": {
+        "types": "./dist/enrich/index.d.ts",
+        "default": "./dist/enrich/index.js"
+      },
+      "require": {
+        "types": "./dist/enrich/index.d.cts",
+        "default": "./dist/enrich/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "pnr-parser": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "docs/FORMAT_NOTES.md",
+    "DATA_LICENSES.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.core.json",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "data:airports": "node scripts/build-airports.mjs",
+    "playground:dev": "vite --config playground/vite.config.ts",
+    "playground:build": "vite build --config playground/vite.config.ts",
+    "prepublishOnly": "npm run lint && npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/node": "^20.19.43",
+    "eslint": "^9.39.5",
+    "fast-check": "^4.10.2",
+    "globals": "^16.5.0",
+    "prettier": "^3.9.10",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.71.2",
+    "vite": "^7.3.7",
+    "vitest": "^4.1.12"
+  }
+}
